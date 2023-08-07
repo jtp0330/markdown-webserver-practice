@@ -17,7 +17,7 @@ func init() {
 func StartWebServer() {
 	//http.ListenAndServe(":8080", http.FileServer(http.Dir(".")))
 	http.HandleFunc("/markdown", GenerateMarkdown)
-	http.Handle("/", http.FileServer(http.Dir("/webserver/public")))
+	http.Handle("/", http.FileServer(http.Dir("webserver/public")))
 	http.ListenAndServe(":8080", nil)
 
 }
